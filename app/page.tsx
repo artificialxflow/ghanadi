@@ -1,6 +1,12 @@
 "use client";
 import { useContext } from "react";
 import { LangContext } from "../components/LangProvider";
+import Hero from "../components/Hero";
+import Infographic from "../components/Infographic";
+import KeyServices from "../components/KeyServices";
+import ProjectGallery from "../components/ProjectGallery";
+import ConsultationForm from "../components/ConsultationForm";
+import Footer from "../components/Footer";
 
 const content = {
   en: {
@@ -16,12 +22,14 @@ const content = {
 export default function HomePage() {
   const { lang } = useContext(LangContext);
   const isRtl = lang === "fa";
-  const t = content[lang];
   return (
-    <div className={`container py-5${isRtl ? ' text-end' : ''}`}
-      style={isRtl ? { direction: 'rtl' } : {}}>
-      <h1 className="mb-3">{t.title}</h1>
-      <p>{t.desc}</p>
-    </div>
+    <>
+      <Hero />
+      <Infographic />
+      <KeyServices />
+      <ProjectGallery />
+      <ConsultationForm />
+      <Footer />
+    </>
   );
 }
