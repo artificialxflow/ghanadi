@@ -43,11 +43,12 @@ export default function InfographicSteps() {
               position: 'absolute',
               top: 0,
               right: 24,
-              width: 4,
+              width: 5,
               height: '100%',
-              background: 'linear-gradient(180deg, #FF7A45 0%, #2E86AB 100%)',
-              borderRadius: 2,
-              zIndex: 0
+              background: 'linear-gradient(180deg, #43B97F 0%, #2E86AB 100%)',
+              borderRadius: 3,
+              zIndex: 0,
+              boxShadow: '0 0 8px #43B97F55'
             }} />
             {steps.map((step, idx) => (
               <div key={idx} className="d-flex align-items-start mb-5 position-relative" style={{ zIndex: 1 }}>
@@ -55,7 +56,7 @@ export default function InfographicSteps() {
                 <div style={{
                   minWidth: 48,
                   minHeight: 48,
-                  background: '#FF7A45',
+                  background: '#43B97F',
                   color: '#fff',
                   borderRadius: '50%',
                   display: 'flex',
@@ -63,7 +64,7 @@ export default function InfographicSteps() {
                   justifyContent: 'center',
                   fontSize: 22,
                   fontWeight: 700,
-                  boxShadow: '0 2px 8px rgba(255,122,69,0.15)',
+                  boxShadow: '0 4px 16px #43B97F55',
                   marginLeft: 16,
                   marginRight: 0,
                   fontFamily: 'Vazirmatn, Tahoma, Arial, sans-serif',
