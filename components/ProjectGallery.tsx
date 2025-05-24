@@ -2,128 +2,79 @@
 import React, { useContext } from "react";
 import { LangContext } from "./LangProvider";
 
-const content = {
-  en: {
-    title: "Project Gallery",
-    before: "Before",
-    after: "After",
-    projects: [
-      {
-        id: 1,
-        beforeImg: "",
-        afterImg: "",
-        caption: "Project 1: Layout Upgrade",
-        stats: "Cost reduced by 20%",
-      },
-      {
-        id: 2,
-        beforeImg: "",
-        afterImg: "",
-        caption: "Project 2: Equipment Modernization",
-        stats: "Efficiency up by 30%",
-      },
-      {
-        id: 3,
-        beforeImg: "",
-        afterImg: "",
-        caption: "Project 3: Hygiene Improvement",
-        stats: "Downtime reduced by 50%",
-      },
-    ],
+const projects = [
+  {
+    id: 1,
+    title: "پروژه ۱: ارتقاء چیدمان",
+    beforeLabel: "قبل از بهینه‌سازی",
+    afterLabel: "بعد از بهینه‌سازی",
+    beforeDesc: "چیدمان قدیمی، فضای ناکافی و مسیرهای غیر اصولی.",
+    afterDesc: "چیدمان جدید، افزایش فضای مفید و بهبود مسیر حرکت کارکنان.",
+    stats: "کاهش هزینه ۲۰٪ | افزایش راندمان ۱۵٪",
+    color: "#FF7A45",
   },
-  fa: {
-    title: "گالری پروژه‌ها",
-    before: "قبل",
-    after: "بعد",
-    projects: [
-      {
-        id: 1,
-        beforeImg: "",
-        afterImg: "",
-        caption: "پروژه ۱: ارتقاء چیدمان",
-        stats: "کاهش هزینه ۲۰٪",
-      },
-      {
-        id: 2,
-        beforeImg: "",
-        afterImg: "",
-        caption: "پروژه ۲: مدرن‌سازی تجهیزات",
-        stats: "افزایش بهره‌وری ۳۰٪",
-      },
-      {
-        id: 3,
-        beforeImg: "",
-        afterImg: "",
-        caption: "پروژه ۳: بهبود بهداشت",
-        stats: "کاهش زمان توقف ۵۰٪",
-      },
-    ],
+  {
+    id: 2,
+    title: "پروژه ۲: مدرن‌سازی تجهیزات",
+    beforeLabel: "قبل از ارتقاء",
+    afterLabel: "بعد از ارتقاء",
+    beforeDesc: "تجهیزات قدیمی و پرمصرف، خرابی مکرر.",
+    afterDesc: "تجهیزات مدرن، مصرف انرژی کمتر و کیفیت بالاتر.",
+    stats: "افزایش بهره‌وری ۳۰٪ | کاهش مصرف انرژی ۲۵٪",
+    color: "#2E86AB",
   },
-};
-
-function ImageOrPlaceholder({ src, label, placeholderText }: { src: string; label: string; placeholderText: string }) {
-  return src ? (
-    <>
-      <img src={src} alt={label} className="img-fluid rounded shadow-sm w-100" />
-      <div className="small text-center mt-2 text-muted">{label}</div>
-    </>
-  ) : (
-    <div className="d-flex flex-column justify-content-center align-items-center bg-secondary rounded shadow-sm w-100" style={{ height: 120, opacity: 0.15 }}>
-      <span className="text-muted small">{placeholderText}</span>
-      <div className="small text-center mt-2 text-muted">{label}</div>
-    </div>
-  );
-}
+  {
+    id: 3,
+    title: "پروژه ۳: بهبود بهداشت و کنترل آفات",
+    beforeLabel: "قبل از اصلاح",
+    afterLabel: "بعد از اصلاح",
+    beforeDesc: "مشکلات بهداشتی و وجود آفات.",
+    afterDesc: "محیط کاملاً بهداشتی و کنترل کامل آفات.",
+    stats: "کاهش زمان توقف ۵۰٪ | افزایش رضایت مشتریان",
+    color: "#F7B801",
+  },
+];
 
 export default function ProjectGallery() {
   const { lang } = useContext(LangContext);
   const isRtl = lang === "fa";
-  const t = content[lang];
 
   return (
-    <section className="container py-5" style={isRtl ? { direction: "rtl" } : {}}>
-      <h2 className={`text-center fw-bold mb-4${isRtl ? " text-end" : ""}`} style={{ fontFamily: isRtl ? 'Vazirmatn, Tahoma, Arial, sans-serif' : 'Poppins, Arial, sans-serif' }}>
-        {t.title}
+    <section className="container py-5" style={{ direction: "rtl" }}>
+      <h2 className="fw-bold text-center mb-5" style={{ color: '#FF7A45', fontFamily: 'Vazirmatn, Tahoma, Arial, sans-serif' }}>
+        نمونه پروژه‌های موفق روناک
       </h2>
-      {/* Parallax effect placeholder */}
-      <div className="mb-3" style={{ height: 30, background: 'linear-gradient(90deg, #2E86AB 0%, #FF7A45 100%)', opacity: 0.2 }} />
-      <div id="projectGalleryCarousel" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          {t.projects.map((project, idx) => (
-            <div className={`carousel-item${idx === 0 ? ' active' : ''}`} key={project.id}>
-              <div className="row g-3 align-items-center justify-content-center">
-                <div className={isRtl ? "col-12 col-md-5 order-md-2" : "col-12 col-md-5"}>
-                  <ImageOrPlaceholder
-                    src={project.afterImg}
-                    label={t.after}
-                    placeholderText={isRtl ? "اینجا تصویر بعد پروژه قرار می‌گیرد" : "After project image placeholder"}
-                  />
-                </div>
-                <div className={isRtl ? "col-12 col-md-5 order-md-1" : "col-12 col-md-5"}>
-                  <ImageOrPlaceholder
-                    src={project.beforeImg}
-                    label={t.before}
-                    placeholderText={isRtl ? "اینجا تصویر قبل پروژه قرار می‌گیرد" : "Before project image placeholder"}
-                  />
-                </div>
-                <div className="col-12 col-md-10 mx-auto mt-3">
-                  <div className="card border-0 bg-light shadow-sm p-3 text-center" style={{ fontFamily: isRtl ? 'Vazirmatn, Tahoma, Arial, sans-serif' : 'Poppins, Arial, sans-serif' }}>
-                    <div className="fw-bold mb-1">{project.caption}</div>
-                    <div className="text-primary" style={{ fontSize: 16 }}>{project.stats}</div>
+      <div className="row g-4 justify-content-center">
+        {projects.map((project) => (
+          <div key={project.id} className="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div className="w-100 shadow rounded-4 overflow-hidden position-relative" style={{ background: '#fcfcfc', fontFamily: 'Vazirmatn, Tahoma, Arial, sans-serif', borderTop: `5px solid ${project.color}`, boxShadow: '0 4px 24px #0001' }}>
+              <div className="p-3 text-center" style={{ background: project.color, color: '#fff', fontWeight: 700, fontSize: 18 }}>
+                {project.title}
+              </div>
+              <div className="p-4">
+                <div className="row g-2 mb-3">
+                  <div className="col-6">
+                    <div className="bg-white rounded-3 d-flex flex-column align-items-center justify-content-center p-2" style={{ height: 110, border: `2.5px solid ${project.color}`, boxShadow: '0 2px 8px #0001' }}>
+                      <span className="fw-bold mb-1" style={{ color: project.color }}>{project.beforeLabel}</span>
+                      <span className="text-muted small mb-2">اینجا تصویر قبل پروژه قرار می‌گیرد</span>
+                      <span className="text-dark small text-center" style={{ fontWeight: 500 }}>{project.beforeDesc}</span>
+                    </div>
                   </div>
+                  <div className="col-6">
+                    <div className="bg-white rounded-3 d-flex flex-column align-items-center justify-content-center p-2" style={{ height: 110, border: `2.5px solid ${project.color}`, boxShadow: '0 2px 8px #0001' }}>
+                      <span className="fw-bold mb-1" style={{ color: project.color }}>{project.afterLabel}</span>
+                      <span className="text-muted small mb-2">اینجا تصویر بعد پروژه قرار می‌گیرد</span>
+                      <span className="text-dark small text-center" style={{ fontWeight: 500 }}>{project.afterDesc}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-3 shadow-sm p-3 text-center mt-2" style={{ border: `2px solid ${project.color}`, fontWeight: 700, color: project.color, fontSize: 17, letterSpacing: 0.5 }}>
+                  {project.stats}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#projectGalleryCarousel" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">{isRtl ? "قبلی" : "Previous"}</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#projectGalleryCarousel" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">{isRtl ? "بعدی" : "Next"}</span>
-        </button>
+          </div>
+        ))}
       </div>
     </section>
   );
