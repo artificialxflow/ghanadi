@@ -9,13 +9,13 @@ const navLabels = {
     home: "Home",
     about: "About",
     contact: "Contact",
-    brand: "Ronac Electronics"
+    brand: "Ghanadi Rahmani"
   },
   fa: {
     home: "خانه",
     about: "درباره ما",
     contact: "تماس",
-    brand: "روناک الکترونیک"
+    brand: "قنادی رحمانی"
   }
 };
 
