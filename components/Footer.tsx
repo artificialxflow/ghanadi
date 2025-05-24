@@ -11,11 +11,11 @@ const partners = [
 const content = {
   en: {
     legal: "Legal permits and certifications available. Trusted by industry leaders.",
-    rights: `All rights reserved. Ronac Electronics © ${new Date().getFullYear()}`,
+    rights: `All rights reserved. Ghanadi Rahmani © ${new Date().getFullYear()}`,
   },
   fa: {
     legal: "دارای مجوزها و تاییدیه‌های قانونی. مورد اعتماد سازمان‌های معتبر.",
-    rights: `تمام حقوق محفوظ است. روناک الکترونیک © ${new Date().getFullYear()}`,
+    rights: `تمام حقوق محفوظ است. قنادی رحمانی © ${new Date().getFullYear()}`,
   },
 };
 
