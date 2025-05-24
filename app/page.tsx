@@ -7,6 +7,7 @@ import KeyServices from "../components/KeyServices";
 import ProjectGallery from "../components/ProjectGallery";
 import ConsultationForm from "../components/ConsultationForm";
 import Footer from "../components/Footer";
+import InfographicSteps from "../components/InfographicSteps";
 
 const content = {
   en: {
@@ -25,6 +26,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <InfographicSteps />
       <Infographic />
       <KeyServices />
       <ProjectGallery />
