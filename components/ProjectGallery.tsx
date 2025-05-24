@@ -42,7 +42,7 @@ export default function ProjectGallery() {
   return (
     <section className="container py-5" style={{ direction: "rtl" }}>
       <h2 className="fw-bold text-center mb-5" style={{ color: '#FF7A45', fontFamily: 'Vazirmatn, Tahoma, Arial, sans-serif' }}>
-        نمونه پروژه‌های موفق روناک
+        نمونه پروژه‌های موفق قنادی رحمانی
       </h2>
       <div className="row g-4 justify-content-center">
         {projects.map((project) => (
@@ -54,21 +54,21 @@ export default function ProjectGallery() {
               <div className="p-4">
                 <div className="row g-2 mb-3">
                   <div className="col-6">
-                    <div className="bg-white rounded-3 d-flex flex-column align-items-center justify-content-center p-2" style={{ height: 110, border: `2.5px solid ${project.color}`, boxShadow: '0 2px 8px #0001' }}>
-                      <span className="fw-bold mb-1" style={{ color: project.color }}>{project.beforeLabel}</span>
-                      <span className="text-muted small mb-2">اینجا تصویر قبل پروژه قرار می‌گیرد</span>
-                      <span className="text-dark small text-center" style={{ fontWeight: 500 }}>{project.beforeDesc}</span>
+                    <div className="bg-white rounded-3 d-flex flex-column align-items-center justify-content-center p-3" style={{ minHeight: 130, border: `2.5px solid ${project.color}`, boxShadow: '0 2px 8px #0001' }}>
+                      <span className="fw-bold mb-2" style={{ color: project.color, fontSize: 16 }}>{project.beforeLabel}</span>
+                      <span className="text-muted mb-2" style={{ fontSize: 13 }}>اینجا تصویر قبل پروژه قرار می‌گیرد</span>
+                      <span className="text-dark text-center d-block" style={{ fontWeight: 500, fontSize: 15, lineHeight: 2 }}>{project.beforeDesc}</span>
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="bg-white rounded-3 d-flex flex-column align-items-center justify-content-center p-2" style={{ height: 110, border: `2.5px solid ${project.color}`, boxShadow: '0 2px 8px #0001' }}>
-                      <span className="fw-bold mb-1" style={{ color: project.color }}>{project.afterLabel}</span>
-                      <span className="text-muted small mb-2">اینجا تصویر بعد پروژه قرار می‌گیرد</span>
-                      <span className="text-dark small text-center" style={{ fontWeight: 500 }}>{project.afterDesc}</span>
+                    <div className="bg-white rounded-3 d-flex flex-column align-items-center justify-content-center p-3" style={{ minHeight: 130, border: `2.5px solid ${project.color}`, boxShadow: '0 2px 8px #0001' }}>
+                      <span className="fw-bold mb-2" style={{ color: project.color, fontSize: 16 }}>{project.afterLabel}</span>
+                      <span className="text-muted mb-2" style={{ fontSize: 13 }}>اینجا تصویر بعد پروژه قرار می‌گیرد</span>
+                      <span className="text-dark text-center d-block" style={{ fontWeight: 500, fontSize: 15, lineHeight: 2 }}>{project.afterDesc}</span>
                     </div>
                   </div>
                 </div>
-                <div className="bg-white rounded-3 shadow-sm p-3 text-center mt-2" style={{ border: `2px solid ${project.color}`, fontWeight: 700, color: project.color, fontSize: 17, letterSpacing: 0.5 }}>
+                <div className="bg-white rounded-3 shadow-sm p-3 text-center mt-3" style={{ border: `2px solid ${project.color}`, fontWeight: 700, color: project.color, fontSize: 18, letterSpacing: 0.5, lineHeight: 2 }}>
                   {project.stats}
                 </div>
               </div>
