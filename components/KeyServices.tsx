@@ -33,7 +33,7 @@ export default function KeyServices() {
   return (
     <section className="container py-5" style={{ direction: "rtl" }}>
       <h2 className="fw-bold text-center mb-5" style={{ color: '#2E86AB', fontFamily: 'Vazirmatn, Tahoma, Arial, sans-serif' }}>
-        مزایای کلیدی خدمات روناک
+        مزایای کلیدی خدمات قنادی رحمانی
       </h2>
       <div className="row g-4 justify-content-center">
         {services.map((service, idx) => (
