@@ -5,13 +5,13 @@ import { LangContext } from "./LangProvider";
 const content = {
   en: {
     title: "Modern Confectionery Design & Equipment",
-    desc: "Optimize your confectionery with Ronac Electronics – innovative layouts, smart equipment, and expert consulting.",
+    desc: "Optimize your confectionery with Ghanadi Rahmani – innovative layouts, smart equipment, and expert consulting.",
     cta1: "Get Consultation",
     cta2: "View Gallery"
   },
   fa: {
     title: "طراحی و تجهیز مدرن قنادی",
-    desc: "قنادی خود را با روناک الکترونیک بهینه کنید؛ چیدمان نوین، تجهیزات هوشمند و مشاوره تخصصی.",
+    desc: "قنادی خود را با قنادی رحمانی بهینه کنید؛ چیدمان نوین، تجهیزات هوشمند و مشاوره تخصصی.",
     cta1: "دریافت مشاوره",
     cta2: "مشاهده گالری"
   }
